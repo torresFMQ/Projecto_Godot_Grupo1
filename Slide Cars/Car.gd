@@ -1,11 +1,19 @@
+tool
 extends KinematicBody2D
 
 var x : bool = false
 var y : bool = false
 export var speed : float = 1
-export var texture : Resource
+export (Texture) var texture setget setTexture, getTexture 
 var collision_box : CollisionShape2D
 var selected = false
+
+func setTexture (value:Texture) -> void:
+	$CarTexture.texture =value	
+	
+func getTexture () -> Texture:
+	return 	$CarTexture.texture 
+		
 
 func _ready():
 	# auto assign drag direction
@@ -21,14 +29,14 @@ func _ready():
 	# assign texture 
 	if texture: 
 		print("Loading "+texture.to_string())
-		$CarTexture.texture = texture	
+		setTexture(texture)	
 	#
 	# auto scale Collision box
-		#collision_box = CollisionShape2D.new()
-		#var car_size = RectangleShape2D.new()
-		#var img_size = texture.get_rect()
-		#car_size.set_extents(img_size)
-		#collision_box.shape = car_size
+		collision_box = CollisionShape2D.new()
+		var car_size = RectangleShape2D.new()
+		var img_size = texture.get_rect()
+		car_size.set_extents(img_size)
+		collision_box.shape = car_size
 		
 		pass
 	
