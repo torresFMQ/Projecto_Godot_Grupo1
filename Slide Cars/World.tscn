@@ -1,35 +1,327 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Car.tscn" type="PackedScene" id=1]
-[ext_resource path="res://cars/9.png" type="Texture" id=2]
-[ext_resource path="res://cars/map.png" type="Texture" id=3]
+[ext_resource path="res://cars/8.png" type="Texture" id=2]
+[ext_resource path="res://Truck_2.png" type="Texture" id=3]
+[ext_resource path="res://cars/3.png" type="Texture" id=4]
+[ext_resource path="res://cars/6.png" type="Texture" id=5]
+[ext_resource path="res://cars/9.png" type="Texture" id=6]
+[ext_resource path="res://cars/2.png" type="Texture" id=7]
+[ext_resource path="res://cars/1.png" type="Texture" id=8]
+[ext_resource path="res://cars/4.png" type="Texture" id=9]
+[ext_resource path="res://cars/7.png" type="Texture" id=10]
+[ext_resource path="res://cone.png" type="Texture" id=11]
+[ext_resource path="res://bg1.png" type="Texture" id=12]
+[ext_resource path="res://TRUCK_1.png" type="Texture" id=13]
+[ext_resource path="res://checker.png" type="Texture" id=14]
+[ext_resource path="res://World.gd" type="Script" id=15]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 49.7023, 177.892 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 411.49, 10 )
+extents = Vector2( 430.462, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 61.309 )
+extents = Vector2( 10, 94.5902 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 37, 72 )
 
 [node name="World" type="Node2D"]
+script = ExtResource( 15 )
 
-[node name="map" type="Sprite" parent="."]
-position = Vector2( 402.51, 320.328 )
+[node name="map2" type="Sprite" parent="."]
+position = Vector2( 1125.82, 355.551 )
+scale = Vector2( 1.14837, 1.0386 )
+texture = ExtResource( 12 )
+offset = Vector2( -475.43, -59.3173 )
+
+[node name="FinishLine" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FinishLine"]
+margin_left = 968.454
+margin_top = 268.435
+margin_right = 1072.45
+margin_bottom = 641.435
+rect_scale = Vector2( 1, 0.24 )
+color = Color( 0.317647, 0.827451, 0.337255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine"]
+position = Vector2( 1019.13, 312.879 )
+scale = Vector2( 1, 0.240001 )
+shape = SubResource( 3 )
+
+[node name="checker" type="Sprite" parent="."]
+position = Vector2( 981.671, 313.6 )
+scale = Vector2( 0.273377, 0.27553 )
+texture = ExtResource( 14 )
+
+[node name="TRUCK_1" type="Sprite" parent="."]
+position = Vector2( 1068.78, 380.426 )
+rotation = -0.489979
+scale = Vector2( 0.391078, 0.296102 )
+texture = ExtResource( 13 )
+
+[node name="Truck_2" type="Sprite" parent="."]
+position = Vector2( 1071.01, 216.163 )
+rotation = -0.489979
+scale = Vector2( 0.701363, 0.582391 )
 texture = ExtResource( 3 )
 
-[node name="Car" parent="." instance=ExtResource( 1 )]
-position = Vector2( 231.892, 262.919 )
-texture = ExtResource( 2 )
+[node name="cones" type="Node2D" parent="."]
 
-[node name="Limits" type="Node2D" parent="."]
+[node name="cone" type="Sprite" parent="cones"]
+position = Vector2( 192.711, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
-position = Vector2( 400.719, 8.9797 )
-shape = SubResource( 1 )
+[node name="cone2" type="Sprite" parent="cones"]
+position = Vector2( 270.219, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone3" type="Sprite" parent="cones"]
+position = Vector2( 347.727, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone4" type="Sprite" parent="cones"]
+position = Vector2( 425.235, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone5" type="Sprite" parent="cones"]
+position = Vector2( 505.416, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone6" type="Sprite" parent="cones"]
+position = Vector2( 582.924, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone7" type="Sprite" parent="cones"]
+position = Vector2( 663.105, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone8" type="Sprite" parent="cones"]
+position = Vector2( 740.614, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone9" type="Sprite" parent="cones"]
+position = Vector2( 823.467, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone10" type="Sprite" parent="cones"]
+position = Vector2( 900.975, 94.3787 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone21" type="Sprite" parent="cones"]
+position = Vector2( 954.975, 140.379 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone22" type="Sprite" parent="cones"]
+position = Vector2( 955.975, 486.379 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone23" type="Sprite" parent="cones"]
+position = Vector2( 134.975, 140.379 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone24" type="Sprite" parent="cones"]
+position = Vector2( 135.975, 487.379 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone11" type="Sprite" parent="cones"]
+position = Vector2( 192.711, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone12" type="Sprite" parent="cones"]
+position = Vector2( 270.219, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone13" type="Sprite" parent="cones"]
+position = Vector2( 347.727, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone14" type="Sprite" parent="cones"]
+position = Vector2( 425.235, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone15" type="Sprite" parent="cones"]
+position = Vector2( 505.416, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone16" type="Sprite" parent="cones"]
+position = Vector2( 582.924, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone17" type="Sprite" parent="cones"]
+position = Vector2( 663.105, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone18" type="Sprite" parent="cones"]
+position = Vector2( 740.614, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone19" type="Sprite" parent="cones"]
+position = Vector2( 823.467, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="cone20" type="Sprite" parent="cones"]
+position = Vector2( 900.975, 521.119 )
+rotation = -2.35619
+scale = Vector2( 0.314457, 0.314457 )
+texture = ExtResource( 11 )
+
+[node name="Limits" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits"]
-position = Vector2( 400.719, 642.048 )
+position = Vector2( 535.538, 525.949 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Limits"]
-position = Vector2( -28.0615, 331.126 )
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 955.357, 182.483 )
 shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 955.255, 446.915 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 136.185, 185.156 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 135.737, 449.079 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
+position = Vector2( 541.476, 98.9605 )
+shape = SubResource( 1 )
+
+[node name="Main Car" parent="." instance=ExtResource( 1 )]
+position = Vector2( 85.5584, 317.28 )
+speed = 1.5
+jitter = 5.0
+texture = ExtResource( 4 )
+
+[node name="Car" parent="." instance=ExtResource( 1 )]
+position = Vector2( 780.68, 220.84 )
+speed = 0.5
+jitter = 2.0
+texture = ExtResource( 6 )
+
+[node name="Car2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 373.086, 469.57 )
+scale = Vector2( 1, 1.08 )
+speed = 0.85
+texture = ExtResource( 5 )
+
+[node name="Car3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 354.971, 392.388 )
+scale = Vector2( 0.88, 1.18919 )
+speed = 2.0
+texture = ExtResource( 8 )
+
+[node name="Collision" parent="Car3" index="0"]
+shape = SubResource( 4 )
+
+[node name="CarTexture" parent="Car3" index="1"]
+texture = ExtResource( 8 )
+
+[node name="Car4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 902.726, 459.4 )
+rotation = -1.57079
+scale = Vector2( 1, 1.24 )
+texture = ExtResource( 7 )
+
+[node name="Car5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 673.943, 468.538 )
+scale = Vector2( 0.920002, 1 )
+speed = 0.994
+jitter = 3.0
+texture = ExtResource( 2 )
+
+[node name="Car6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 263.842, 461.963 )
+rotation = -4.71238
+scale = Vector2( 1, 1.48 )
+texture = ExtResource( 9 )
+
+[node name="Car7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 348.141, 193.173 )
+rotation = 1.57079
+texture = ExtResource( 10 )
+
+[node name="Car8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 185.167, 275.649 )
+rotation = -1.57079
+scale = Vector2( 1, 0.88 )
+speed = 0.75
+texture = ExtResource( 10 )
+
+[node name="Car10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 574.685, 193.571 )
+rotation = -1.57079
+speed = 0.75
+texture = ExtResource( 10 )
+
+[node name="Car9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 756.814, 348.666 )
+rotation = -1.57079
+speed = 0.85
+texture = ExtResource( 5 )
+
+[node name="Car11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 458.674, 326.899 )
+rotation = -1.57079
+speed = 0.85
+texture = ExtResource( 5 )
+[connection signal="body_entered" from="FinishLine" to="." method="_on_FinishLine_body_entered"]
+
+[editable path="Car3"]
